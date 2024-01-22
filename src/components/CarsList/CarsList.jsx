@@ -25,7 +25,7 @@ export const CarsList = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCar, setSelectedCar] = useState(null);
-    const [selectedBrand, setSelectedBrand] = useState("");
+    const [ setSelectedBrand] = useState("");
   const dispatch = useDispatch();
 
   const handleLoadMore = () => {
