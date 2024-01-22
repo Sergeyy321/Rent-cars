@@ -25,7 +25,7 @@ export const CarsList = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCar, setSelectedCar] = useState(null);
-    const [ setSelectedBrand] = useState("");
+   
   const dispatch = useDispatch();
 
   const handleLoadMore = () => {
@@ -42,12 +42,7 @@ export const CarsList = () => {
    setSelectedCar(car);
    setIsModalOpen(true);
  };
- const handleFilterChange = (brand) => {
-   setSelectedBrand(brand);
-   setCurrentPage(1);
 
-   dispatch(fetchCars({ page: 1, brand }));
- };
   const favoriteList = useSelector((state) => state.advert.favoriteList);
 
   const isLoading = useSelector(state => state.advert.isLoading);
@@ -71,7 +66,7 @@ export const CarsList = () => {
 
     return (
       <div>
-        <NavBar onFilterChange={handleFilterChange} />
+        <NavBar  />
         {isLoading === true && <Loader />}
         <List>
           {cars.map((car) => (
