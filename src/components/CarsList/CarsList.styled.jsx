@@ -12,9 +12,11 @@ export const Cart = styled.li`
   width: 274px;
   height: 426px;
   position: relative;
+  list-style: none;
 `;
 
 export const Btn = styled.button`
+margin-top:28px;
   display: flex;
   width: 274px;
   height: 44px;
@@ -37,28 +39,35 @@ export const Img = styled.img`
 `
 
 export const ListInfo = styled.ul`
-display:flex;
-flex-wrap: wrap;
-height:40px;
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    list-style: none;
+    color: rgba(18, 20, 23, 0.5);
+    font-family: Manrope;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+  }
 `;
 
 export const Favorite = styled.img`
   width: 18px;
   height: 18px;
-
-
 `;
 
-export const  BtnFavorite = styled.button`
-position: absolute;
-top:14px;
-right: 14px; 
-background-color:transparent;
-border :transparent;
-:hover{
-  opacity:0.5;
-}
+export const BtnFavorite = styled.button`
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background-color: transparent;
+  border: transparent;
+  :hover {
+    opacity: 0.5;
+  }
 `
+
 export const LoadMore = styled.button`
 margin-left:auto;
 margin-right:auto;
@@ -71,4 +80,21 @@ margin-right:auto;
   line-height: 24px;
   border:0;
   text-decoration-line: underline;
+`;
+export const ListName = styled.div`
+  display: flex;
+  justify-content: space-between;
+  li {
+    color: #121417;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+`;
+
+export const ModelStyle = styled.span`
+  color: #3470ff;
 `;

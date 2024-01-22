@@ -6,7 +6,10 @@ import {
   ListInfo,
   Favorite,
   BtnFavorite,
-  LoadMore
+  LoadMore,
+  ListName,
+  ModelStyle,
+  
 } from "./CarsList.styled";
 import { fetchCars } from "../../Redux/operations";
 import React, { useEffect, useState } from "react";
@@ -15,13 +18,14 @@ import { NavBar } from "../NavBar/NavBar";
 import { Loader } from "../Loader/Loader";
 import Heart from '../img/heart.svg'
 import { Modal } from '../Modal/Modal'
-import { addFavorite } from "../../Redux/operations";
+import { addFavorite,deleteFavorite } from "../../Redux/operations";
 export const CarsList = () => {
   const selectCars = (state) => state.advert.cars;
   const cars = useSelector(selectCars);
     const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCar, setSelectedCar] = useState(null);
+    const [selectedBrand, setSelectedBrand] = useState("");
   const dispatch = useDispatch();
 
   const handleLoadMore = () => {
@@ -38,32 +42,61 @@ export const CarsList = () => {
    setSelectedCar(car);
    setIsModalOpen(true);
  };
-    const addToFavorites = (car) => {
-    dispatch(addFavorite(car))
+ const handleFilterChange = (brand) => {
+   setSelectedBrand(brand);
+   setCurrentPage(1);
+
+   dispatch(fetchCars({ page: 1, brand }));
+ };
+  const favoriteList = useSelector((state) => state.advert.favoriteList);
+
+  const isLoading = useSelector(state => state.advert.isLoading);
+
+   
+  const addToFavorites = (car) => {
+
+   const isAlreadyFavorited = favoriteList.some(
+     (favoriteCar) => favoriteCar.id === car.id
+   );
+ 
+    if (isAlreadyFavorited) {
+    
+     dispatch(deleteFavorite(car));
+    } else {
       
+     dispatch(addFavorite(car));
+   }
   };
   
-const isLoading = useSelector(state => state.advert.isLoading);
+
     return (
       <div>
-        <NavBar />
+        <NavBar onFilterChange={handleFilterChange} />
         {isLoading === true && <Loader />}
         <List>
           {cars.map((car) => (
             <Cart key={car.id}>
               <Img src={car.img} />
               <BtnFavorite onClick={() => addToFavorites(car)}>
-                <Favorite src={Heart} />
+                <Favorite
+                  src={Heart}
+                  isFavorited={favoriteList.some(
+                    (favoriteCar) => favoriteCar.id === car.id
+                  )}
+                />
               </BtnFavorite>
-              <h2>
-                {car.make}
-                {car.year}
-              </h2>
-              <h2>{car.rentalPrice}</h2>
+              <ListName>
+                <div>
+                  {car.make} <ModelStyle>{car.model}</ModelStyle>,{car.year}
+                </div>
+
+                <div>{car.rentalPrice}</div>
+              </ListName>
+
               <ListInfo>
-                <li>{car.address}</li>
-                <li>{car.type}</li>
-                <li>{car.model}</li>
+                <li>{car.address}|</li>
+                <li>{car.type}|</li>
+                <li>{car.model}|</li>
                 <li>{car.id}</li>
               </ListInfo>
               <Btn onClick={() => learnMoreClick(car)}>Learn more</Btn>

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { fetchCars, addFavorite } from "./operations";
+import { fetchCars, addFavorite,deleteFavorite } from "./operations";
 
 const handlePending = (state) => {
   state.isLoading = true;
@@ -39,15 +39,24 @@ export const sliceCars = createSlice({
       .addCase(addFavorite.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-         const existingCar = state.favoriteList.find(
-           (car) => car.id === action.payload.id
-         );
-  if (!existingCar) {
-    state.favoriteList.push(action.payload);
-  }
+        const existingCar = state.favoriteList.find(
+          (car) => car.id === action.payload.id
+        );
+        console.log(existingCar);
+        if (!existingCar) {
+          state.favoriteList.push(action.payload);
+        }
       })
-      .addCase(addFavorite.rejected, handleRejected);
-  },
+      .addCase(addFavorite.rejected, handleRejected)
+    .addCase(deleteFavorite.pending, handlePending)
+    .addCase(deleteFavorite.fulfilled, (state, action) => {
+      
+        state.favoriteList = state.favoriteList.filter(
+          (car) => car.id !== action.payload
+        );
+      })
+    .addCase(deleteFavorite.rejected, handleRejected)
+    }
 });
 
 export const tasksReducer = sliceCars.reducer;

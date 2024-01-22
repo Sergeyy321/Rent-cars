@@ -7,13 +7,27 @@ import {
   Image,
   CarModel,
 } from "./Modal.styled";
-import {  ListInfo } from "../CarsList/CarsList.styled";
+import { ListInfo } from "../CarsList/CarsList.styled";
+import { useEffect } from "react";
 import close from '../img/x.svg'
 export const Modal = ({ car, onClose }) => {
-      
-    if (!car) {
-      return null;
-    }
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
+
+  if (!car) {
+    return null;
+  }
   return (
     <ModalWrapper onClick={onClose}>
       <ModalContent onClick={(e) => e.stopPropagation()}>

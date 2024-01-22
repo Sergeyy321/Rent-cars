@@ -1,32 +1,72 @@
+import React, { useState } from "react";
+import { Title, Btn, Container, Inputs } from "./NavBar.styled";
+
+export const NavBar = ({onFilterChange}) => {
+  const [selectedBrand, setSelectedBrand] = useState("");
 
 
+  const handleBrandChange = (event) => {
+    setSelectedBrand(event.target.value);
+ 
+  };
 
-export const NavBar = () => {
 
+  const handleSearch = () => {
 
-
+    onFilterChange({ brand: selectedBrand });
+  };
 
   return (
-    <div>
-      <div>Car brand</div>
-      <div>
-        Price/1hour{" "}
-              <select>
-                <option value="">Buick</option>
-                <option value="">Volvo</option>
-                <option value="">Hummer</option>
-                <option value="">Subaru</option>
-                <option value="">Mitsubishi</option>
-                <option value="">Nissan</option>
-                <option value="">Lincoln</option>
-                <option value="">GMC</option>
-                <option value="">Hyundai</option>
+    <Container>
+      <Title>
+        Car brand
+        <div>
+          {" "}
+          <select value={selectedBrand} onChange={handleBrandChange}>
+            <option value="" disabled selected hidden>
+              Enter the text
+            </option>
 
-   </select>
-       
-      </div>
-      <div>Car mileage/km</div>
-      <button>Search</button>
-    </div>
+            <option value="Buick">Buick</option>
+            <option value="Volvo">Volvo</option>
+            <option value="Hummer">Hummer</option>
+            <option value="Subaru">Subaru</option>
+            <option value="Mitsubishi">Mitsubishi</option>
+            <option value="Nissan">Nissan</option>
+            <option value="Lincoln">Lincoln</option>
+            <option value="GMC">GMC</option>
+            <option value="Hyundai">Hyundai</option>
+          </select>
+        </div>
+      </Title>
+      <Title>
+        Price/1hour
+        <div>
+          {" "}
+          <select>
+            <option value="" disabled selected hidden>
+              To $
+            </option>
+
+            <option value="">30</option>
+            <option value="">40</option>
+            <option value="">50</option>
+            <option value="">60</option>
+            <option value="">70</option>
+            <option value="">80</option>
+          </select>
+        </div>
+      </Title>
+      <Title>
+        Car mileage/km
+        <div>
+          {" "}
+          <Inputs type="text" placeholder="From"></Inputs>
+          <Inputs type="text" placeholder="To"></Inputs>
+        </div>
+      </Title>
+
+      <Btn onClick={handleSearch}>Search</Btn>
+    </Container>
   );
 };
