@@ -2,7 +2,6 @@
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "homepage": "https://sergeyy321.github.io/Rent-cars/",
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
