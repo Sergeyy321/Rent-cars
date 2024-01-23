@@ -1,20 +1,9 @@
 import React, { useState } from "react";
 import { Title, Btn, Container, Inputs } from "./NavBar.styled";
 
-export const NavBar = ({onFilterChange}) => {
-  const [selectedBrand, setSelectedBrand] = useState("");
-
-
-  const handleBrandChange = (event) => {
-    setSelectedBrand(event.target.value);
+export const NavBar = () => {
  
-  };
 
-
-  const handleSearch = () => {
-
-    onFilterChange({ brand: selectedBrand });
-  };
 
   return (
     <Container>
@@ -22,8 +11,8 @@ export const NavBar = ({onFilterChange}) => {
         Car brand
         <div>
           {" "}
-          <select value={selectedBrand} onChange={handleBrandChange}>
-            <option value="" disabled selected hidden>
+          <select value='' >
+            <option value="" >
               Enter the text
             </option>
 
@@ -66,7 +55,7 @@ export const NavBar = ({onFilterChange}) => {
         </div>
       </Title>
 
-      <Btn onClick={handleSearch}>Search</Btn>
+      <Btn >Search</Btn>
     </Container>
   );
 };

@@ -17,6 +17,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavBar } from "../NavBar/NavBar";
 import { Loader } from "../Loader/Loader";
 import Heart from '../img/heart.svg'
+import BlueHeart from "../img/blue-heart.svg";
 import { Modal } from '../Modal/Modal'
 import { addFavorite,deleteFavorite } from "../../Redux/operations";
 export const CarsList = () => {
@@ -25,13 +26,15 @@ export const CarsList = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCar, setSelectedCar] = useState(null);
-    const [ setSelectedBrand] = useState("");
+
   const dispatch = useDispatch();
 
   const handleLoadMore = () => {
  
   dispatch(fetchCars(currentPage + 1));
-  setCurrentPage((prevPage) => prevPage + 1);
+    setCurrentPage((prevPage) => 
+      prevPage + 1
+    );
 };
   useEffect(() => {
     
@@ -42,47 +45,42 @@ export const CarsList = () => {
    setSelectedCar(car);
    setIsModalOpen(true);
  };
- const handleFilterChange = (brand) => {
-   setSelectedBrand(brand);
-   setCurrentPage(1);
 
-   dispatch(fetchCars({ page: 1, brand }));
- };
   const favoriteList = useSelector((state) => state.advert.favoriteList);
 
   const isLoading = useSelector(state => state.advert.isLoading);
 
    
   const addToFavorites = (car) => {
-
-   const isAlreadyFavorited = favoriteList.some(
-     (favoriteCar) => favoriteCar.id === car.id
-   );
- 
-    if (isAlreadyFavorited) {
+ const isFavorited = (car) => {
+   favoriteList.find((el) => {
+     if (el.id === car.id) {
+       console.log(1);
+       return <Favorite src={BlueHeart} />;
+     }
+     <Favorite src={Heart} />;
+   });
+ };
     
-     dispatch(deleteFavorite(car));
+    if (isFavorited) {
+      dispatch(deleteFavorite(car));
     } else {
-      
-     dispatch(addFavorite(car));
-   }
+      dispatch(addFavorite(car));
+    }
   };
-  
 
     return (
       <div>
-        <NavBar onFilterChange={handleFilterChange} />
+        <NavBar  />
         {isLoading === true && <Loader />}
         <List>
           {cars.map((car) => (
             <Cart key={car.id}>
               <Img src={car.img} />
               <BtnFavorite onClick={() => addToFavorites(car)}>
-                <Favorite
+              <Favorite
                   src={Heart}
-                  isFavorited={favoriteList.some(
-                    (favoriteCar) => favoriteCar.id === car.id
-                  )}
+                 
                 />
               </BtnFavorite>
               <ListName>

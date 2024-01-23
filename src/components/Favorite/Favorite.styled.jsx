@@ -20,3 +20,12 @@ export const Btn = styled.button`
   border: 0;
   text-decoration-line: underline;
 `;
+
+export const IsEmpty = styled.div`
+  background-color: #3470ff;
+  padding: 12px;
+  color:white;
+  border-radius: 15px;
+margin:16px;
+  list-style: none;
+`;
