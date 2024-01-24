@@ -6,7 +6,9 @@ axios.defaults.baseURL = "https://6526d426917d673fd76d1134.mockapi.io";
 export const fetchCars = createAsyncThunk(
   "adverts/fetchCars",
 
-  async ( page,  { rejectWithValue }) => {
+
+  async ( page, { rejectWithValue }) => {
+
     try {
       if (page === undefined) {
         page = 1;

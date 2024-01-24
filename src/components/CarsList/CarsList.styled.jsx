@@ -15,22 +15,7 @@ export const Cart = styled.li`
   list-style: none;
 `;
 
-export const Btn = styled.button`
-margin-top:28px;
-  display: flex;
-  width: 274px;
-  height: 44px;
-  padding: 12px 99px;
-  justify-content: center;
-  align-items: center;
-  background-color: #3470ff;
-  color: white;
-  border-radius: 12px;
-  border: 1px solid #3470ff;
-  :hover {
-    opacity: 0.5;
-  }
-`;
+
 
 export const Img = styled.img`
   width:274px;
@@ -55,6 +40,7 @@ export const ListInfo = styled.ul`
 export const Favorite = styled.img`
   width: 18px;
   height: 18px;
+
 `;
 
 export const BtnFavorite = styled.button`
@@ -63,23 +49,47 @@ export const BtnFavorite = styled.button`
   right: 14px;
   background-color: transparent;
   border: transparent;
+  cursor: pointer;
   :hover {
     opacity: 0.5;
   }
-`
+`;
 
 export const LoadMore = styled.button`
-margin-left:auto;
-margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   color: #3470ff;
-  background-color:transparent;
+  background-color: transparent;
   font-family: Manrope;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
-  border:0;
+  border: 0;
+  padding:15px;
+  cursor:pointer;
   text-decoration-line: underline;
+  :hover {
+    opacity: 0.5;
+  }
+`;
+
+export const Btn = styled.button`
+  margin-top: 28px;
+  display: flex;
+  width: 274px;
+  height: 44px;
+  padding: 12px 99px;
+  justify-content: center;
+  align-items: center;
+  background-color: #3470ff;
+  color: white;
+  border-radius: 12px;
+  border: 0;
+  cursor: pointer;
+  :hover {
+    opacity: 0.5;
+  }
 `;
 export const ListName = styled.div`
   display: flex;

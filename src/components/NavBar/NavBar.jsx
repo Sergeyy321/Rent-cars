@@ -1,8 +1,13 @@
 
 import { Title, Btn, Container, Inputs } from "./NavBar.styled";
 
-export const NavBar = ({onFilterChange}) => {
+
+export const NavBar = () => {
  
+
+
+ 
+
 
   return (
     <Container>
@@ -11,7 +16,9 @@ export const NavBar = ({onFilterChange}) => {
         <div>
           {" "}
           <select value='' >
-            <option value="" disabled selected hidden>
+
+            <option value="" >
+
               Enter the text
             </option>
 

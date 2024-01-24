@@ -33,12 +33,13 @@ export const Title = styled.h1`
   justify-content:center;
   margin-top:34px;
   font-family: Manrope;
-  font-size: 20px;
+  font-size: 22px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 24px;
 `;
 
 export const El = styled.li`
-  text-decoration:none;
+  list-style:none;
+  margin-top:10px;
 `;

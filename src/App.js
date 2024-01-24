@@ -8,6 +8,7 @@ export const App=()=> {
     <Container>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<HomePage />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/favorites" element={<Favorite />} />
       </Routes>

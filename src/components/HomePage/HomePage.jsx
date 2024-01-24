@@ -1,9 +1,9 @@
-import React from 'react'
-import { Header } from '../Header/Header'
+import React from "react";
+import { Header } from "../Header/Header";
 
 import { List, Title, El, Main } from "./HomePage.styled";
-import { Footer } from '../Footer/Footer';
-export const  HomePage =()=> {
+import { Footer } from "../Footer/Footer";
+export const HomePage = () => {
   return (
     <div>
       <Header />
@@ -48,4 +48,4 @@ export const  HomePage =()=> {
       <Footer />
     </div>
   );
-}
+};
