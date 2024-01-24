@@ -66,7 +66,7 @@ export const CarsList = () => {
     //   dispatch(deleteFavorite(car));
     // } else {
       dispatch(addFavorite(car));
-    
+     
   };
 
     return (
