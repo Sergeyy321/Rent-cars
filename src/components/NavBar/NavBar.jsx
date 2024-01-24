@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+
 import { Title, Btn, Container, Inputs } from "./NavBar.styled";
 
+
 export const NavBar = () => {
+ 
+
+
  
 
 
@@ -12,7 +16,9 @@ export const NavBar = () => {
         <div>
           {" "}
           <select value='' >
+
             <option value="" >
+
               Enter the text
             </option>
 
