@@ -52,21 +52,21 @@ export const CarsList = () => {
 
    
   const addToFavorites = (car) => {
- const isFavorited = (car) => {
-   favoriteList.find((el) => {
-     if (el.id === car.id) {
-       console.log(1);
-       return <Favorite src={BlueHeart} />;
-     }
-     <Favorite src={Heart} />;
-   });
- };
+//  const isFavorited = (car) => {
+//    favoriteList.find((el) => {
+//      if (el.id === car.id) {
+//        console.log(1);
+//        return <Favorite src={BlueHeart} />;
+//      }
+//      <Favorite src={Heart} />;
+//    });
+//  };
     
-    if (isFavorited) {
-      dispatch(deleteFavorite(car));
-    } else {
+    // if (isFavorited) {
+    //   dispatch(deleteFavorite(car));
+    // } else {
       dispatch(addFavorite(car));
-    }
+    
   };
 
     return (
