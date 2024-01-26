@@ -9,7 +9,7 @@ export const HomePage = () => {
       <Header />
       <Main>
         <Title>
-          {" "}
+      
           "Drive the Moment, Rent the Journey – Your Key to Unforgettable
           Adventures!"
         </Title>

@@ -16,9 +16,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavBar } from "../NavBar/NavBar";
 import { Loader } from "../Loader/Loader";
 import Heart from "../img/heart.svg";
-import BlueHeart from "../img/blue-heart.svg";
 import { Modal } from "../Modal/Modal";
-import { addFavorite, deleteFavorite } from "../../Redux/operations";
+import { addFavorite } from "../../Redux/operations";
 export const CarsList = () => {
   const selectCars = (state) => state.advert.cars;
   const cars = useSelector(selectCars);
@@ -41,7 +40,7 @@ export const CarsList = () => {
     setIsModalOpen(true);
   };
 
-  const favoriteList = useSelector((state) => state.advert.favoriteList);
+
 
   const isLoading = useSelector((state) => state.advert.isLoading);
 
