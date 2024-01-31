@@ -1,12 +1,16 @@
 
 import { Title, Btn, Container, Inputs } from "./NavBar.styled";
+import { ToastContainer, toast } from "react-toastify";
 
-
-export const NavBar = () => {
+ import "react-toastify/dist/ReactToastify.css";
  
-
-
  
+ export const NavBar = () => {
+   
+   
+   const notify = () => {
+   toast('Car was delete')
+  }
 
 
   return (
@@ -15,12 +19,8 @@ export const NavBar = () => {
         Car brand
         <div>
           {" "}
-          <select value='' >
-
-            <option value="" >
-
-              Enter the text
-            </option>
+          <select value="">
+            <option value="">Enter the text</option>
 
             <option value="Buick">Buick</option>
             <option value="Volvo">Volvo</option>
@@ -61,7 +61,8 @@ export const NavBar = () => {
         </div>
       </Title>
 
-      <Btn >Search</Btn>
+      <Btn onClick={notify}>Search</Btn>
+      <ToastContainer />
     </Container>
   );
 };
