@@ -1,11 +1,20 @@
 import { ToastContainer, toast } from "react-toastify";
 import { Title, Btn, Container, Inputs } from "./NavBar.styled";
+
 import "react-toastify/dist/ReactToastify.css";
 
 export const NavBar = () => {
-  const notify = () => {
-    toast("Car was delete");
-  };
+
+
+ 
+ 
+ export const NavBar = () => {
+   
+   
+   const notify = () => {
+   toast('Car was delete')
+  }
+
 
   return (
     <Container>
@@ -56,6 +65,9 @@ export const NavBar = () => {
       </Title>
 
       <Btn onClick={notify}>Search</Btn>
+
+      <ToastContainer />
+
     </Container>
   );
 };
