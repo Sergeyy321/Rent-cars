@@ -8,7 +8,7 @@ export const NavBar = () => {
 
  
  
- export const NavBar = () => {
+
    
    
    const notify = () => {

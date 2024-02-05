@@ -1,6 +1,5 @@
-
 import styled from "styled-components";
-import mainImg from '../img/panie-w-salonie-samochodowym-kobieta-kupuje-samochod-elegancka-kobieta-w-niebieskiej-sukience-kierownik-przekazuje-klucze-klientowi.jpg'
+import mainImg from "../img/background.jpg";
 export const Main = styled.div`
   background-image: url(${mainImg});
   background-position: center;
@@ -23,15 +22,15 @@ export const List = styled.ul`
     margin-left: 24px;
     border-radius: 15px;
     opacity: 0.8;
-    padding:16px;
+    padding: 16px;
   }
 `;
 
 export const Title = styled.h1`
   color: #121417;
-  display:flex;
-  justify-content:center;
-  margin-top:34px;
+  display: flex;
+  justify-content: center;
+  margin-top: 34px;
   font-family: Manrope;
   font-size: 22px;
   font-style: normal;
@@ -40,6 +39,6 @@ export const Title = styled.h1`
 `;
 
 export const El = styled.li`
-  list-style:none;
-  margin-top:10px;
+  list-style: none;
+  margin-top: 10px;
 `;
