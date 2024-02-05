@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Rent-cars/static/css/main.20a1392a.css",
-    "main.js": "/Rent-cars/static/js/main.f509e6eb.js",
-    "static/media/panie-w-salonie-samochodowym-kobieta-kupuje-samochod-elegancka-kobieta-w-niebieskiej-sukience-kierownik-przekazuje-klucze-klientowi.jpg": "/Rent-cars/static/media/panie-w-salonie-samochodowym-kobieta-kupuje-samochod-elegancka-kobieta-w-niebieskiej-sukience-kierownik-przekazuje-klucze-klientowi.7d49dae7ac6ec9d4a129.jpg",
-    "static/media/heart.svg": "/Rent-cars/static/media/heart.4f90324bb1306c6788753df75e79ee15.svg",
+    "main.css": "/Rent-cars/static/css/main.2944e6db.css",
+    "main.js": "/Rent-cars/static/js/main.48c4ae74.js",
+    "static/media/background.jpg": "/Rent-cars/static/media/background.c22980145ff369197c0e.jpg",
+    "static/media/heart.svg": "/Rent-cars/static/media/heart.50ba90f99ffc2c06fe58953d3ffd1aa0.svg",
     "index.html": "/Rent-cars/index.html",
-    "static/media/x.svg": "/Rent-cars/static/media/x.deb20e5da737e93121346cb3855e8f21.svg",
-    "main.20a1392a.css.map": "/Rent-cars/static/css/main.20a1392a.css.map",
-    "main.f509e6eb.js.map": "/Rent-cars/static/js/main.f509e6eb.js.map"
+    "static/media/x.svg": "/Rent-cars/static/media/x.7d3526421f919ada2a02dcd89e36afdd.svg",
+    "main.2944e6db.css.map": "/Rent-cars/static/css/main.2944e6db.css.map",
+    "main.48c4ae74.js.map": "/Rent-cars/static/js/main.48c4ae74.js.map"
   },
   "entrypoints": [
-    "static/css/main.20a1392a.css",
-    "static/js/main.f509e6eb.js"
+    "static/css/main.2944e6db.css",
+    "static/js/main.48c4ae74.js"
   ]
 }
