@@ -1,6 +1,6 @@
 import React from "react";
 import { Header } from "../Header/Header";
-import { Footer } from '../Footer/Footer'
+import { Footer } from "../Footer/Footer";
 import { useSelector, useDispatch } from "react-redux";
 import { El, Btn, IsEmpty } from "./Favorite.styled";
 import { deleteFavorite } from "../../Redux/operations";
@@ -13,6 +13,8 @@ export const Favorite = () => {
   const notify = () => {
     toast("Car was delete", { autoClose: 3000 });
   };
+
+
   
   const dispatch = useDispatch();
   const handleDelete = (carId) => {
@@ -20,11 +22,12 @@ export const Favorite = () => {
  
   }
 
+
   const isEmpty = () => {
-             if (favoriteList.length === 0) {
-               return true
-             }
-      }
+    if (favoriteList.length === 0) {
+      return true;
+    }
+  };
   return (
     <div>
       <Header />

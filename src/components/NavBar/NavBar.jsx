@@ -1,8 +1,11 @@
-
-import { Title, Btn, Container, Inputs } from "./NavBar.styled";
 import { ToastContainer, toast } from "react-toastify";
+import { Title, Btn, Container, Inputs } from "./NavBar.styled";
 
- import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.css";
+
+export const NavBar = () => {
+
+
  
  
  export const NavBar = () => {
@@ -62,7 +65,9 @@ import { ToastContainer, toast } from "react-toastify";
       </Title>
 
       <Btn onClick={notify}>Search</Btn>
+
       <ToastContainer />
+
     </Container>
   );
 };
